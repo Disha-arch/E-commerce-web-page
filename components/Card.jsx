@@ -1,6 +1,12 @@
 import React from "react";
 import { IoStar } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 export default function Card(props) {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/product-display", { state: { item: props.items } });
+  }
+
   const handleAddToCart = () => {
     alert(`${props.items.title} added to cart!`);
   };
@@ -11,7 +17,11 @@ export default function Card(props) {
     <div className="container">
       <div className="product-card">
         <div>
-          <img src={props.items.image} className="product-image" />
+          <img
+            src={props.items.image}
+            onClick={handleClick}
+            className="product-image"
+          />
         </div>
         <h2 className="product-title">{props.items.title}</h2>
         <p className="product-price">${props.items.price}</p>
