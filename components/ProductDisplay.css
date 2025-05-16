@@ -35,6 +35,7 @@
 }
 .product-size-header-div a {
   text-decoration: underline;
+  cursor: pointer;
 }
 .size-grid-div {
   display: grid;
@@ -51,9 +52,43 @@
   transition: background-color 0.2s ease;
 }
 .size-box:hover {
-  background-color: #e0e0e0;
+  background-color: black;
+  color: #f3f3f3;
 }
 .size-box.selected {
   background-color: #000;
   color: #fff;
+}
+.product-ADT-W-button-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  gap: 16px;
+}
+.add-to-cart-button {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+.add-to-cart-button:hover {
+  background-color: #000;
+  color: #f3f3f3;
+}
+.wishlist-button {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+.wishlist-button:hover {
+  background-color: #000;
+  color: #f3f3f3;
 }
