@@ -2,6 +2,7 @@ import React from "react";
 import { IoStar, IoStarOutline } from "react-icons/io5";
 import { LiaRulerHorizontalSolid } from "react-icons/lia";
 import { LuIndianRupee } from "react-icons/lu";
+import { FaRegHeart } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
 import "./ProductDisplay.css";
 
@@ -64,6 +65,12 @@ const ProductDisplay = (props) => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="product-ADT-W-button-div">
+          <button className="add-to-cart-button">ADD TO CART</button>
+          <button className="wishlist-button">
+            <FaRegHeart />
+          </button>
         </div>
       </div>
     </div>
