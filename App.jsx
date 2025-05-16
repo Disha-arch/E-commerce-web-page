@@ -1,13 +1,14 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import ProductDisplay from "./components/ProductDisplay";
 import Header from "./components/header";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
 import ProductData from "./ProductData";
 import Category from "./components/Category";
 import Ad from "./Ad";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,19 +20,37 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <div className="title">
-        <h1 className="heading">Shop by Latest</h1>
-      </div>
-      <section>{Data}</section>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <div className="title">
+                <h1 className="heading">Shop by Latest</h1>
+              </div>
+              <section>{Data}</section>
 
-      <div>
-        <Category />
-      </div>
+              <div>
+                <Category />
+              </div>
 
-      <section className="ad-section">
-        <Ad />
-      </section>
+              <section className="ad-section">
+                <Ad />
+              </section>
+            </>
+          }
+        />
+        <Route
+          path="/product-display"
+          element={
+            <div>
+              <ProductDisplay />
+            </div>
+          }
+        />
+      </Routes>
+      <Footer />
     </>
   );
 }
