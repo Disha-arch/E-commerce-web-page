@@ -148,8 +148,18 @@
   background-repeat: no-repeat;
   text-align: center;
   margin-top: 10px;
+  animation: bgZoom 1.2s ease-out forwards;
 }
-
+@keyframes bgZoom {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .hero-content {
   max-width: 600px;
   text-align: center;
@@ -161,6 +171,7 @@
   color: #111;
   margin-bottom: 1rem;
   color: #f9f9f9;
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 
 .hero-button {
@@ -172,10 +183,22 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 
 .hero-button:hover {
   background-color: #333;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .product-card {
@@ -281,9 +304,20 @@
 .heading {
   color: #111;
   font-size: 29px;
+  animation: slideDownUp 1s ease forwards;
 
   &:hover {
     color: rgb(112, 107, 107);
+  }
+}
+@keyframes slideDownUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .category-title {
@@ -412,18 +446,29 @@
   font-weight: bold;
   font-size: 30px;
   cursor: pointer;
+  transition: 0.3s ease;
 
   &:hover {
     background-color: #111;
     color: #e0e0e0;
+    border-radius: 50%;
   }
 }
+
 .ad-badge h3 {
   background-color: #e0e0e0;
   padding: 10px;
   font-weight: bold;
 }
-
 .ad-main-div {
   position: relative;
+}
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+.slide-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
