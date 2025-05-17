@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoStar } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Card(props) {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   const navigate = useNavigate();
   function handleClick() {
     navigate("/product-display", { state: { item: props.items } });
@@ -15,7 +21,7 @@ export default function Card(props) {
   };
   return (
     <div className="container">
-      <div className="product-card">
+      <div className="product-card" data-aos="zoom-in">
         <div>
           <img
             src={props.items.image}
