@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ShoesData, ClothingData, AccessoriesData } from "../Data";
 import { IoColorFill } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Category = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
@@ -15,7 +21,7 @@ const Category = () => {
 
   return (
     <div className="main--div">
-      <div className="category-title">
+      <div className="category-title" data-aos="fade-up">
         <h1 className="category-heading">Shop By category</h1>
       </div>
 
@@ -39,7 +45,7 @@ const Category = () => {
           <span>Accessories</span>
         </button>
       </div>
-      <div className="list-item-1">
+      <div className="list-item-1" data-aos="zoom-in">
         {selectedCategory === "Shoes" &&
           ShoesData.map((items) => (
             <div className="div" key={items.id}>
