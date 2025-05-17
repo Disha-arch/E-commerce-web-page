@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import ProductDisplay from "./components/ProductDisplay";
@@ -9,8 +9,13 @@ import ProductData from "./ProductData";
 import Category from "./components/Category";
 import Ad from "./Ad";
 import Footer from "./components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 900 });
+  }, []);
   const [count, setCount] = useState(0);
 
   const Data = ProductData.map((items) => {
@@ -26,7 +31,7 @@ function App() {
           element={
             <>
               <Hero />
-              <div className="title">
+              <div className="title" data-aos="fade-up">
                 <h1 className="heading">Shop by Latest</h1>
               </div>
               <section>{Data}</section>
