@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ShoesData, ClothingData, AccessoriesData } from "../Data";
+import { ShoesData, ClothingData, AccessoriesData } from "data/Data";
 import { IoColorFill } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";

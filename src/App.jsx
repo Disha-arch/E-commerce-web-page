@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./src/App.css";
 import ProductDisplay from "./components/ProductDisplay";
 import Header from "./components/header";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
-import ProductData from "./ProductData";
+import ProductData from "src/data/ProductData.jsx";
 import Category from "./components/Category";
-import Ad from "./Ad";
+import Ad from "src/Ad";
 import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
