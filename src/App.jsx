@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./src/App.css";
-import ProductDisplay from "./components/ProductDisplay.jsx";
-import Header from "./components/header.jsx";
-import Hero from "./components/Hero.jsx";
-import Card from "./components/Card.jsx";
-import ProductData from "src/data/ProductData.jsx";
-import Category from "./components/Category.jsx";
-import Ad from "src/Ad.jsx";
-import Footer from "./components/Footer.jsx";
+import "./App.css";
+import Header from "./components/header";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+import ProductData from "./data/ProductData";
+import Category from "./components/Category";
+import Ad from "./Ad.jsx";
+import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ProductDisplay from './components/ProductDisplay';
 
 function App() {
   useEffect(() => {
